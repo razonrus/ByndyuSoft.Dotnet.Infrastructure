@@ -1,7 +1,6 @@
 ﻿{
   "copyright": "Copyright © ByndyuSoft 2016",
   "dependencies": {
-    "Infrastructure.Common": "1.2.0",
     "Microsoft.AspNet.Mvc": "5.2.3",
     "Mvc3Futures": "3.0.20105",
     "Newtonsoft.Json": "9.0.1"
