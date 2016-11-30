@@ -1,8 +1,10 @@
-﻿namespace ByndyuSoft.Infrastructure.Web.Forms
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+
+namespace ByndyuSoft.Infrastructure.Web.Forms
 {
     using System;
-    using System.Web.Mvc;
-    using ControllerBase = Web.ControllerBase;
 
     public class FormControllerBase : ControllerBase
     {
@@ -26,7 +28,7 @@
 
         protected ActionResult Form<TForm>(TForm form, Func<ActionResult> successResult) where TForm : IForm
         {
-            return Form(form, successResult, () => Redirect(Request.UrlReferrer.AbsoluteUri));
+            return Form(form, successResult, () => Redirect(Request.Headers["Referer"].ToString()));
         }
 
         protected ActionResult Form<TForm>(TForm form, Func<ActionResult> successResult, Func<ActionResult> failResult) where TForm : IForm
@@ -46,16 +48,7 @@
                 }
             }
 
-            TempData[ModelStateKey] = ModelState;
             return failResult();
-        }
-
-        protected override void OnActionExecuted(ActionExecutedContext filterContext)
-        {
-            if (TempData[ModelStateKey] != null && ModelState.Equals(TempData[ModelStateKey]) == false)
-                ModelState.Merge((ModelStateDictionary) TempData[ModelStateKey]);
-
-            base.OnActionExecuted(filterContext);
         }
     }
 }

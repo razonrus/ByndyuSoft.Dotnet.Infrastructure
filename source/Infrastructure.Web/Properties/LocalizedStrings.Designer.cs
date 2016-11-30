@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Reflection;
+
 namespace ByndyuSoft.Infrastructure.Web.Properties {
     using System;
     
@@ -39,7 +41,7 @@ namespace ByndyuSoft.Infrastructure.Web.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ByndyuSoft.Infrastructure.Web.Properties.LocalizedStrings", typeof(LocalizedStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ByndyuSoft.Infrastructure.Web.Properties.LocalizedStrings", typeof(LocalizedStrings).GetTypeInfo().Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
