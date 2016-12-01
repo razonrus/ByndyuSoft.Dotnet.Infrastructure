@@ -1,10 +1,8 @@
 ﻿namespace ByndyuSoft.Infrastructure.Web.Forms
 {
     using System;
-    using System.Runtime.Serialization;
 
-    [Serializable]
-	public class FormHandlerException : Exception
+    public class FormHandlerException : Exception
 	{
 		public FormHandlerException()
 		{
@@ -23,11 +21,6 @@
 
 		public FormHandlerException(string message, Exception inner)
 			: base(message, inner)
-		{
-		}
-
-		protected FormHandlerException(SerializationInfo info, StreamingContext context)
-			: base(info, context)
 		{
 		}
 

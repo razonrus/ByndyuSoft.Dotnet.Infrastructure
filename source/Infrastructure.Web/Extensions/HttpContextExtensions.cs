@@ -1,7 +1,7 @@
-﻿namespace ByndyuSoft.Infrastructure.Web.Extensions
-{
-	using System.Web;
+﻿using Microsoft.AspNetCore.Http;
 
+namespace ByndyuSoft.Infrastructure.Web.Extensions
+{
 	public static class HttpContextExtensions
 	{
 		/// <summary>
@@ -9,7 +9,7 @@
 		/// </summary>
 		/// <param name="context"></param>
 		/// <returns></returns>
-		public static bool IsAuthenticated(this HttpContextBase context)
+		public static bool IsAuthenticated(this HttpContext context)
 		{
 			return context.User != null && context.User.Identity.IsAuthenticated;
 		}
