@@ -1,4 +1,6 @@
-﻿using CoreSample.Account.Forms;
+﻿using AutoMapper;
+using CoreSample.Account.Forms;
+using CoreSample.Domain.Model.Entities;
 
 namespace CoreSample.Account.Profiles
 {

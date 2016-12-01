@@ -1,6 +1,9 @@
-﻿{
+{
   "dependencies": {
+    "AutoMapper": "5.2.0",
+    "Infrastructure.Domain": "1.2.0-*",
     "Infrastructure.Web": "1.2.0-*",
+    "JetBrains.Annotations": "10.2.1",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Mvc": "1.1.0",
     "Microsoft.AspNetCore.Razor.Tools": {

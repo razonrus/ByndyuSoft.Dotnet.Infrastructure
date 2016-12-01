@@ -17,29 +17,9 @@ namespace CoreSample.Controllers
         }
 
         [HttpPost]
-        public ActionResult SignIn(SignIn command, string returnUrl)
+        public ActionResult SignIn(SignIn command)
         {
-            return Form(command, GetRedirectResult(returnUrl));
-        }
-
-        [CustomAuthorize]
-        public ActionResult SignOut(SignOut command)
-        {
-            return Form(command, this.RedirectToAction("Profile"));
-        }
-
-        [CustomAuthorize]
-        public ActionResult Profile()
-        {
-            return View();
-        }
-
-        private ActionResult GetRedirectResult(string returnUrl)
-        {
-            if (Url.IsLocalUrl(returnUrl))
-                return Redirect(returnUrl);
-
-            return this.RedirectToAction("Profile");
+            return Form(command, this.RedirectToAction("Index", "Home"));
         }
     }
 }

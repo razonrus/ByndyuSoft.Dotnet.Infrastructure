@@ -6,7 +6,7 @@ namespace ByndyuSoft.Infrastructure.Web.Forms
 {
     using System;
 
-    public class FormControllerBase : ControllerBase
+    public class FormControllerBase : Controller
     {
         private const string ModelStateKey = "ModelState";
         private readonly IFormHandlerFactory _formHandlerFactory;
