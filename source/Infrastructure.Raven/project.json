@@ -10,10 +10,11 @@
   },
   "description": "Infrastructure.RavenDB",
   "frameworks": {
-    "net45": {
+    "net46": {
       "dependencies": {
         "RavenDB.Embedded": "3.5.0",
-        "RavenDB.Database": "3.5.0"
+        "RavenDB.Database": "3.5.0",
+        "System.Runtime": "4.0.20.0"
       }
     },
     "netstandard1.3": {
